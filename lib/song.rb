@@ -45,9 +45,14 @@ class Song
     split_name = name.sub(/\b.mp3/,'').split(" - ")
     song = self.new_by_name(split_name[1])
     song.artist_name = split_name[0]
+    song
   end
   
   def self.create_from_filename
+    split_name = name.sub(/\b.mp3/,'').split(" - ")
+    song = self.create_by_name(split_name[1])
+    song.artist_name = split_name[0]
+    song
   end
   
   def self.destroy_all
